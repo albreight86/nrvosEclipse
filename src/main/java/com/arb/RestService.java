@@ -5,53 +5,24 @@
 
 package com.arb;
 
-import com.arb.business.SovrnBusiness;
-import com.arb.model.AdBid;
-import org.springframework.stereotype.Service;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import javax.ws.rs.core.UriBuilder;
-import javax.ws.rs.core.UriInfo;
-import java.net.InetAddress;
-import java.net.URISyntaxException;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
-import org.apache.cxf.annotations.GZIP;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-import java.net.InetAddress;
-import java.net.URISyntaxException;
-import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import com.arb.business.Business;
+import com.arb.model.AdBid;
 
 @Service("sovrnRestService")
 @Path("")
-@GZIP
 public class RestService
 {
 
@@ -59,10 +30,10 @@ public class RestService
    private static Response RESPONSE_NO_CONTENT = Response.noContent().build();
    private static Response RESPONSE_BAD_REQUEST = Response.status(Status.BAD_REQUEST).build();
 
-   SovrnBusiness business;
+   private Business business;
 
    @Resource
-   public void setSovrnBusiness(SovrnBusiness business)
+   public void setSovrnBusiness(Business business)
    {
       this.business = business;
    }

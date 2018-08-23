@@ -1,6 +1,6 @@
 /*
  * COPYRIGHT 2017.
- * File:     SovrnBusiness.java
+ * File:     Business.java
  */
 package com.arb.business;
 
@@ -36,7 +36,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @Component
-public class SovrnBusiness
+public class Business
 {
    private final static String SQL_USER_PROVIDER_ASSOC = "select * from USER_PROVIDER_ASSOC where user_id = ?";
    private final static String SQL_PROVIDER_SIZE_ASSOC = "select * from PROVIDER_SIZE_ASSOC where provider_id = ?";
