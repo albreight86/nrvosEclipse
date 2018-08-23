@@ -28,9 +28,9 @@
    </cxf:features>
 </cxf:bus>
 
-<jaxrs:server name="sovrnWebServices" address="http://0.0.0.0:80">
+<jaxrs:server name="webServices" address="http://0.0.0.0:80">
    <jaxrs:serviceBeans>
-      <ref bean="sovrnRestService"/>
+      <ref bean="restService"/>
    </jaxrs:serviceBeans>
    <jaxrs:providers>
       <bean class="org.apache.cxf.jaxrs.provider.json.JSONProvider"/>
@@ -39,7 +39,7 @@
 
    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-      <property name="url" value="jdbc:mysql://localhost:3306/sovrn?useSSL=false" />
+      <property name="url" value="jdbc:mysql://localhost:3306/nrvos?useSSL=false" />
       <property name="username" value="root" />
       <property name="password" value="iggle" />
    </bean>

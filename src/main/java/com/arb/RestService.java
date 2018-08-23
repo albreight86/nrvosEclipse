@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 import com.arb.business.Business;
 import com.arb.model.AdBid;
 
-@Service("sovrnRestService")
+@Service("restService")
 @Path("")
 public class RestService
 {
@@ -33,7 +33,7 @@ public class RestService
    private Business business;
 
    @Resource
-   public void setSovrnBusiness(Business business)
+   public void setBusiness(Business business)
    {
       this.business = business;
    }
